@@ -1,0 +1,118 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+.slider{
+  position: relative;
+  top:0;
+  width:1000px;
+  height: 500px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slider .slide-item{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: slider 38s linear infinite;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.slider .slide-item:nth-child(1){
+  animation-delay: 0s;
+}
+.slider .slide-item:nth-child(2){
+  animation-delay: 8s;
+}
+.slider .slide-item:nth-child(3){
+  animation-delay: 16s;
+}
+.slider .slide-item:nth-child(4){
+  animation-delay: 24s;
+}
+.slider .slide-item:nth-child(5){
+  animation-delay: 32s;
+}
+
+.slider .slide-item img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider .slide-item .item{
+  position: absolute;
+  top: 35rem;
+  left: 5rem;
+  opacity: 0;
+  width: 50%;
+  color: #fff;
+  padding: 3rem;
+  background: rgba(0, 0, 0, 0.3);
+  animation: slide-up 38s cubic-bezier(0, .9, .3, 1.2);
+  visibility:visible;
+  
+  animation-delay: 1.5s;
+  animation-fill-mode: forwards;
+  z-index: 999;
+}
+
+.slider .slide-item .item h2{
+  font-size: 20px;
+}
+.slider .slide-item .item p{
+  font-size: 18px;
+  margin: 10px 0 0;
+}
+
+@keyframes slider{
+  0%{
+    visibility: hidden;
+    opacity: 0;
+  }
+  2%{
+    visibility: visible;
+    opacity: 1;
+  }
+  18%{
+    visibility: visible;
+    opacity: 1;
+  }
+  25%, 100%{
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;     
+    top: 35rem;
+  }
+  2%, 13%{
+    visibility: visible;
+    opacity: 1;
+    top: 20rem; 
+  }
+  14%{
+    opacity: 0;     
+    top: 35rem;
+  }
+ 
+  100% {
+    visibility: visible;   
+    opacity: 1; 
+    top: 20rem;    
+  }
+}
